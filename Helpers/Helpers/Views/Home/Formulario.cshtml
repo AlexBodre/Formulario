@@ -1,0 +1,52 @@
+﻿
+
+@model Helpers.Models.Class1
+
+<h2>Formulario</h2>
+
+<form class="form-group" action="mostrar" method="post">
+
+    Cedula  : @Html.TextBoxFor(x => x.cedula, new { htmlAttributes = new { @class = "form-control" } })<br />
+
+    Nombre: @Html.TextBoxFor(x => x.nombre, new { htmlAttributes = new { @class = "form-control" } }) <br />
+
+    Apellido: @Html.TextBoxFor(x => x.apellido, new { htmlAttributes = new { @class = "form-control" } }) <br />
+
+    Edad      : @Html.TextBoxFor(x => x.edad, new { htmlAttributes = new { @class = "form-control" } }) <br />
+
+    Telefono: @Html.TextBoxFor(x => x.telefono, new { htmlAttributes = new { @class = "form-control" } }) <br />
+
+    Correo: @Html.TextBoxFor(x => x.correo, new { htmlAttributes = new { @class = "form-control" } }) <br />
+
+    Genero: @Html.LabelFor(x => x.genero) @Html.DropDownListFor(x => x.genero, new List<SelectListItem>
+{ new SelectListItem{Text="Masculino", Value="Masculino"},
+new SelectListItem{Text="Femenino", Value="Femenino"}}, "Selecciona un genero", new { htmlAttributes = new { @class = "form-control" } })
+    <br /> <br />
+
+    Estado Civil: <text>Casado:</text> @Html.RadioButtonFor(x => x.estadoCivil, "Casado", new { htmlAttributes = new { @class = "form-control" } })
+    <text>Soltero:</text> @Html.RadioButtonFor(x => x.estadoCivil, "Soltero", new { htmlAttributes = new { @class = "form-control" } })
+    <text>Viudo:</text> @Html.RadioButtonFor(x => x.estadoCivil, "Viudo", new { htmlAttributes = new { @class = "form-control" } })
+    <text>Union Libre:</text> @Html.RadioButtonFor(x => x.estadoCivil, "Union Libre", new { htmlAttributes = new { @class = "form-control" } })
+    <br /> <br />
+
+    <div class="form-check">
+        Pasatiempos: @{
+
+            List<string> lista = ViewBag.pasatiempo;
+
+            foreach (var x in lista)
+            {
+                <tr>
+                    <input class="form-check-input" type="checkbox" name="pasatiempos" value="@x" />@x
+                </tr>
+            }
+        }
+    </div>
+        <br /> <br />
+
+        <input type="submit" value="enviar" />
+</form>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

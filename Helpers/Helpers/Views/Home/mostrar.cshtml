@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "mostrar";
+}
+
+<h2>mostrar</h2>
+
+
+<table class="table">
+
+    <thead>
+
+        <tr>
+            <th>Cedula</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Edad</th>
+            <th>Telefono</th>
+            <th>Correo</th>
+            <th>Genero</th>
+            <th>Estado civil</th>
+            <th>Pasatiempos</th>
+            
+        </tr>
+
+
+    </thead>
+    <tbody>
+      
+           
+        <tr>
+            <td>@Model.cedula</td>
+            <td>@Model.nombre</td>
+            <td>@Model.apellido</td>
+            <td>@Model.edad</td>
+            <td>@Model.telefono</td>
+            <td>@Model.correo</td>
+            <td>@Model.genero</td>
+            <td>@Model.estadoCivil</td>
+            <td>@Model.pasatiempos</td>
+
+        </tr>
+           
+            
+            
+        
+    </tbody>
+
+</table>
